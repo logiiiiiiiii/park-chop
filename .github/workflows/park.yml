@@ -6,6 +6,7 @@ on:
 
 jobs:
   test:
+    timeout-minutes: 60
     name: Setup
     runs-on: ubuntu-latest
     steps:
