@@ -1,0 +1,12 @@
+name: Triggered from Home Assistant
+
+on:
+  repository_dispatch:
+    types: [home-assistant-trigger]
+
+jobs:
+  do_something:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Example step
+        run: echo "Triggered by Home Assistant!"
