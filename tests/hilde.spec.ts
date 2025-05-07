@@ -3,15 +3,15 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const pass: string = process.env.PW ?? '';
-const email: string = process.env.EMAIL ?? '';
+const email: string = process.env.EMAIL ?? 'marius.j.nilsen@gmail.com';
 
 
 test('test', async ({ page }) => {
   await page.goto('https://smartoblat.trondheimparkering.no/accounts/login/?next=/mypermits/1388750');
   await page.getByLabel('Brukernavn*').click();
-  await page.getByLabel('Brukernavn*').fill(email);
+  await page.fill('input[id="id_username"]', email);
   await page.getByLabel('Brukernavn*').press('Tab');
-  await page.getByLabel('Passord*').fill(pass);
+  await page.fill('input[id="id_password"]', pass);
   await page.getByLabel('Passord*').press('Enter');
   await page.getByRole('button', { name: 'Legg til kjøretøy' }).click();
   await page.getByPlaceholder('Registreringsnummer').click();
