@@ -2,5 +2,13 @@
   "name": "park-chop",
   "lockfileVersion": 3,
   "requires": true,
-  "packages": {}
+  "packages": {},
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.14"
+  },
+  "scripts": {},
+  "dependencies": {
+    "dotenv": "^16.5.0"
+  }
 }
