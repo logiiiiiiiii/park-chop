@@ -5,8 +5,14 @@ on:
     types: [home-assistant-trigger]
 
 jobs:
-  do_something:
+  test:
+    name: Setup
     runs-on: ubuntu-latest
     steps:
-      - name: Example step
-        run: echo "Triggered by Home Assistant!"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Run Playwright test
+        run: npx playwright hilde.spec.ts
