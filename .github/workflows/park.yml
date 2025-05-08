@@ -18,6 +18,11 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - run:
+          name: Set up environment variables into .env
+          command: |
+            echo "EMAIL=${EMAIL}" > .env
+            echo "PW=${PW}" >> .env
       - name: Run Playwright test
         run: npx playwright test hilde.spec.ts
       - uses: actions/upload-artifact@v4
