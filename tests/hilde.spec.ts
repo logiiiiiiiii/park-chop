@@ -5,7 +5,6 @@ dotenv.config();
 const pass = process.env.PW as string;
 const email = process.env.EMAIL as string;
 
-
 test('test', async ({ page }) => {
   await page.goto('https://smartoblat.trondheimparkering.no/accounts/login/?next=/mypermits/1388750');
   await page.getByLabel('Brukernavn*').click();
