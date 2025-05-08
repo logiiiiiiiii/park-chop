@@ -9,9 +9,9 @@ const email = process.env.EMAIL as string;
 test('test', async ({ page }) => {
   await page.goto('https://smartoblat.trondheimparkering.no/accounts/login/?next=/mypermits/1388750');
   await page.getByLabel('Brukernavn*').click();
-  await page.fill('input[id="id_username"]', email);
+  await page.getByLabel('Brukernavn*').fill(email);
   await page.getByLabel('Brukernavn*').press('Tab');
-  await page.fill('input[id="id_password"]', pass);
+  await page.getByLabel('Passord*').fill(pass);
   await page.getByLabel('Passord*').press('Enter');
   await page.getByRole('button', { name: 'Legg til kjøretøy' }).click();
   await page.getByPlaceholder('Registreringsnummer').click();

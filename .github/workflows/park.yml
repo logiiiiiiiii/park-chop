@@ -8,6 +8,9 @@ jobs:
   test:
     name: Setup
     runs-on: ubuntu-latest
+    env: #define environment variables
+      EMAIL: ${{secrets.EMAIL}}
+      PW: ${{secrets.PW}}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
