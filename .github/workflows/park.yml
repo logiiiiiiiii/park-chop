@@ -18,8 +18,8 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Set up environment variables into .env
       - run:
-          name: Set up environment variables into .env
           command: |
             echo "EMAIL=${EMAIL}" > .env
             echo "PW=${PW}" >> .env
