@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const pass: string = process.env.PW ?? '';
-const email: string = process.env.EMAIL ?? 'marius.j.nilsen@gmail.com';
+const pass = process.env.PW as string;
+const email = process.env.EMAIL as string;
 
 
 test('test', async ({ page }) => {
