@@ -14,7 +14,7 @@ test('test', async ({ page }) => {
   await page.getByLabel('Passord*').press('Enter');
   await page.getByRole('button', { name: 'Legg til kjøretøy' }).click();
   await page.getByPlaceholder('Registreringsnummer').click();
-  await page.getByPlaceholder('Registreringsnummer').fill('EH91629');
+  await page.getByPlaceholder('Registreringsnummer').fill('ER22713');
   await page.getByPlaceholder('Epost for kontakt').press('ControlOrMeta+a');
   await page.getByPlaceholder('Epost for kontakt').fill('marius.j.nilsen@gmail.com');
   await page.getByRole('button', { name: 'Legg til', exact: true }).click();
